@@ -10,10 +10,14 @@ Usage:
 import os
 import sys
 
-PARENT_FOLDER = os.path.realpath(os.path.join(os.path.dirname(__file__), '..'))
+FILE_PATH = os.path.realpath(__file__)
+BIN_FOLDER = os.path.dirname(FILE_PATH)
+PARENT_FOLDER = os.path.join(BIN_FOLDER,'../')
+
 if os.path.isdir(os.path.join(PARENT_FOLDER, '.venv')):
     sys.path.insert(0, PARENT_FOLDER)
 
+print(PARENT_FOLDER)
 sys.path.insert(0, PARENT_FOLDER)
 from docopt import docopt
 from docker_record import main
