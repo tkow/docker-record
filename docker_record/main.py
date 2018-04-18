@@ -89,7 +89,7 @@ def replay(container):
     dockerfile.append(dockerfile_cmd_command)
 
     for instruction in dockerfile:
-        print instruction
+        print(instruction)
 
 
 def copy_from_container(container, source, destination):
